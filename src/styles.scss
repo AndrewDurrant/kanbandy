@@ -1,1 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$teal-palette: (
+  50: #dff7f6,
+  100: #b1eae8,
+  200: #80dddb,
+  300: #4dcecf,
+  400: #26c3c7,
+  500: #00b9c1,
+  600: #00a9af,
+  700: #009497,
+  800: #008080,
+  900: #055d57,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white
+  )
+);
+
+$cherry-palette: (
+  50: #feebee,
+  100: #fccdd3,
+  200: #eb9a9c,
+  300: #e07476,
+  400: #ea5555,
+  500: #ef453d,
+  600: #e03c3b,
+  700: #ce3335,
+  800: #c12c2e,
+  900: #b22122,
+  contrast: (
+
+  )
+);
+
+$kanbandy-primary: mat.define-palette(mat.$teal-palette);
+$kanbandy-accent: mat.define-palette(mat.$gray-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$kanbandy-warn: mat.define-palette(mat.$amber-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$kanbandy-theme: mat.define-light-theme((
+  color: (
+    primary: $kanbandy-primary,
+    accent: $kanbandy-accent,
+    warn: $kanbandy-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($kanbandy-theme);
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap');
+
+:root {
+  --font-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+  --primary-dark: #008080;
+  --primary-light: #00CCCC;
+  --black: #000112;
+  --very-dark-grey-dbg: #20212C;
+  --dark-grey: #2B2C37;
+  --lines-dbg: #3E3F4E;
+  --medium-grey: #828FA3;
+  --lines-lbg: #E4EBFA;
+  --light-grey-lbg: #F4F7FD;
+  --white: #FFFFFF;
+  --secondary-dark: #EA5555;
+  --secondary-light: #FF9898;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: var(--black);
+  font-family: var(--font-jakarta-sans);
+  background: var(--light-grey-lbg);
+  min-height: 100vh;
+}
+
+.content {
+  display: grid;
+  height: 100vh;
+}
+
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

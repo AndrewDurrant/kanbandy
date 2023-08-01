@@ -1,7 +1,6 @@
-<div class="left-nav-wrapper">
+<nav class="left-nav-container">
   <span>Left Nav</span>
-  <nav>
-    <a routerLink="/boards">Boards</a>
-    <a routerLink="/board/1">Board Detail</a>
-  </nav>
-</div>
+  <a routerLink="/boards">Boards</a>
+  <a routerLink="/board/1">Board Detail</a>
+  <button mat-button (click)="updateParentLeftNavStatus()">Close Nav</button>
+</nav>

@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'kanbandy';
+  opened: boolean = true;
+
+  updateSideNavVisibility(status: boolean) {
+    this.opened = status;
+  }
 }
 

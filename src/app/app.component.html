@@ -1,7 +1,15 @@
 <app-top-nav [title]="title"></app-top-nav>
-<div class="layout">
-  <app-left-nav></app-left-nav>
-  <div class="content">
+
+<mat-sidenav-container class="content-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <app-left-nav
+      (closeLeftNav)="updateSideNavVisibility($event)"
+    ></app-left-nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button *ngIf="!opened" mat-button (click)="updateSideNavVisibility(true)">
+      Open Nav
+    </button>
     <router-outlet></router-outlet>
-  </div>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

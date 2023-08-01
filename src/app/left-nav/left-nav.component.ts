@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-left-nav',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./left-nav.component.scss']
 })
 export class LeftNavComponent {
+  @Output() closeLeftNav: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  updateParentLeftNavStatus() {
+    this.closeLeftNav.emit(false);
+  }
 }

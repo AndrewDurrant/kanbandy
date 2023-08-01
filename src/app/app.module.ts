@@ -8,6 +8,8 @@ import { BoardsComponent } from './boards/boards.component';
 import { BoardDetailComponent } from './board-detail/board-detail.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
